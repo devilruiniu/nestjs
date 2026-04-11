@@ -2,7 +2,7 @@
  * @Author: devilruiniu
  * @Date: 2026-04-11 17:33:04
  * @LastEditors: devilruiniu
- * @LastEditTime: 2026-04-11 18:56:05
+ * @LastEditTime: 2026-04-11 19:38:08
  * @Description: todo...
  * @Copyright © 2026 devilruiniu. All Rights Reserved.
  */
@@ -33,15 +33,15 @@ export class AiController {
       // 需要设置相应数据为流式，所以，这里要引入express的Response类型
       // 设置SSE响应头
       res.setHeader('Content-Type', 'text/event-stream');
-      // 设置连接成功返回（可选）
-      // res.write('data: {"type": "start"}\n\n')
+      // 设置连接成功返回-让前端之后该大模型已经开始处理流程了
+      res.write('data: {"type": "start"}\n\n');
       // 流式返回数据
       for await (const chunk of this.aiService.streamChat(messages)) {
         const data = JSON.stringify({ type: 'chunk', content: chunk });
         res.write(`data: ${data}\n\n`);
       }
-      // 发送结束信号（可选）
-      // res.write('data: {"type": "end"}\n\n')
+      // 发送结束信号-让前端可以知道改流程已结束
+      res.write('data: {"type": "end"}\n\n');
       res.end();
     } catch (err: unknown) {
       // 先判断 err 是不是标准错误对象

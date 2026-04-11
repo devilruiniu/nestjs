@@ -2,7 +2,7 @@
  * @Author: devilruiniu
  * @Date: 2026-04-11 17:33:14
  * @LastEditors: devilruiniu
- * @LastEditTime: 2026-04-11 18:34:18
+ * @LastEditTime: 2026-04-11 19:51:28
  * @Description: 调用共大模型
  * @Copyright © 2026 devilruiniu. All Rights Reserved.
  */
@@ -17,7 +17,7 @@ export class AiService {
     // 定义openai实例
     this.openai = new OpenAI({
       //用的是阿里云的百炼大模型有免费额度
-      apiKey: 'sk-94213f2ee34d48e68f766ee1eb7e5405',
+      apiKey: 'apiKey',
       baseURL: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
     });
   }
