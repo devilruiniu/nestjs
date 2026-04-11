@@ -1,0 +1,77 @@
+{
+  // ====================== 【文件自动生成头部信息】1. 保存时自动格式化 ======================
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file", // 格式化整个文件（不是仅改动）
+
+  // ====================== 【文件自动生成头部信息】2. 格式化工具（Vue.volar，没有就用内置） ======================
+  "editor.defaultFormatter": "Vue.volar",
+
+  // ====================== 【文件自动生成头部信息】3. 可选：自动修复 ESLint 可修复问题 ======================
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "always" // 自动整理导入
+  },
+
+  // ====================== 【文件自动生成头部信息】4. 针对 TS/JS/JSON 强化格式化 ======================
+  "[typescript]": { "editor.formatOnSave": true },
+  "[javascript]": { "editor.formatOnSave": true },
+  "[json]": { "editor.formatOnSave": true },
+  "[vue]": { "editor.formatOnSave": true },
+  "[html]": { "editor.formatOnSave": true },
+  "[css]": { "editor.formatOnSave": true },
+  
+  // ====================== 【文件自动生成头部信息】1. 头部注释：作者/日期/版权（核心） ======================
+  "fileheader.customMade": {
+    "Author": "devilruiniu",
+    // "Email": "your@email.com",
+    "Date": "Do not edit",       // 自动生成创建时间
+    "LastEditors": "devilruiniu",    // 自动更新最后编辑人
+    "LastEditTime": "Do not edit",// 自动更新最后编辑时间
+    "Description": "todo...",           // 文件描述（手动填）
+    // "FilePath": "Do not edit",   // 自动生成文件路径
+    // 自定义版权（支持${now_year}变量）
+    "custom_string_obkoro1_copyright": "Copyright © ${now_year} devilruiniu. All Rights Reserved."
+  },
+
+  // ====================== 【文件自动生成头部信息】2. 全局配置：自动添加/开关/样式 ======================
+  "fileheader.configObj": {
+    "autoAdd": true,             // 新建文件自动加头部
+    "autoAlready": true,         // 已有文件自动识别并更新
+    "autoUpdate": true,          // 保存时自动更新LastEditTime/LastEditors
+    "dateStyle": "YYYY-MM-DD HH:mm:ss", // 日期格式
+    "prohibitAutoAdd": ["json", "md", "gitignore"], // 不自动加的文件
+    "createFileTime": true,      // 用文件创建时间（false=用当前时间）
+
+    // 不同语言自定义注释符号（JS/TS/Vue/Python/Java等）
+    "language": {
+      "js/ts/vue": {
+        "head": "/**",
+        "middle": " * @",
+        "end": " */"
+      },
+      "py": {
+        "head": "",
+        "middle": " @",
+        "end": ""
+      },
+      "java/go/cpp/c": {
+        "head": "/**",
+        "middle": " * @",
+        "end": " */"
+      },
+      "html": {
+        "head": "<!--",
+        "middle": " @",
+        "end": "-->"
+      }
+    }
+  },
+
+  // ====================== 【文件自动生成头部信息】3. 函数注释模板（可选） ======================
+  "fileheader.cursorMode": {
+    "description": "",
+    "param": "",
+    "return": "",
+    "author": "devilruiniu"
+  }
+}
