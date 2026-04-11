@@ -1,3 +1,11 @@
+/**
+* @Author: devilruiniu
+* @Date: 2026-04-11 00:07:24
+* @LastEditors: devilruiniu
+* @LastEditTime: 2026-04-11 10:24:42
+* @Description: todo...
+* @Copyright © 2026 devilruiniu. All Rights Reserved.
+*/
 <script setup>
 import socketIo from 'socket.io-client';
 import { onMounted, reactive } from 'vue';
