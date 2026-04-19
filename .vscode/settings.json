@@ -1,4 +1,8 @@
 {
+  // 1. 关闭自动缩进探测（头号元凶！必须false）
+  "editor.detectIndentation": false,
+  // 2. 强制全局缩进大小
+  "editor.tabSize": 2,
   // ====================== 【文件自动生成头部信息】1. 保存时自动格式化 ======================
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "file", // 格式化整个文件（不是仅改动）
