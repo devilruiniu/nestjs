@@ -2,11 +2,11 @@
  * @Author: devilruiniu
  * @Date: 2026-04-18 10:39:50
  * @LastEditors: devilruiniu
- * @LastEditTime: 2026-04-19 15:39:51
+ * @LastEditTime: 2026-04-19 23:08:59
  * @Description: 项目入口文件
  * @Copyright © 2026 devilruiniu. All Rights Reserved.
  */
-import { ValidationPipe } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ErrorExceptionFilter } from './common/filter/error-exception.filter';
@@ -14,6 +14,7 @@ import { HttpExceptionFilter } from './common/filter/http-exception.filter';
 import { HttpResultInterceptor } from './common/interceptor/httpResult.interceptor';
 
 async function bootstrap() {
+  const logger = new Logger('Bootstrap');
   const app = await NestFactory.create(AppModule);
   // 全局开启 DTO 校验（所有接口自动校验）, 才会拦截dto校验的异常数据
   app.useGlobalPipes(
@@ -32,6 +33,8 @@ async function bootstrap() {
   app.useGlobalFilters(
     ...[new ErrorExceptionFilter(), new HttpExceptionFilter()],
   );
-  await app.listen(process.env.PORT ?? 3000);
+  const port = process.env.PORT ?? 3000;
+  await app.listen(port);
+  logger.debug(`应用已启动：http://localhost:${port}`);
 }
 void bootstrap();
